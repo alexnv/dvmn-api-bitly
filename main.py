@@ -37,7 +37,7 @@ def is_bitlink(token, url):
   response = requests.get(api_url, headers=headers)
   return response.ok
 
-def createArgumentParser():
+def create_argument_parser():
   parser = argparse.ArgumentParser(
     description='Возвращает короткую ссылку через сервис bit.ly, либо выводит количество переходов по ранее сокращенной ссылке'
   )
@@ -48,7 +48,7 @@ def createArgumentParser():
 def main():
   token = os.getenv("BITLY_TOKEN")
   if token:
-    argument_parser = createArgumentParser()
+    argument_parser = create_argument_parser()
     program_aguments = argument_parser.parse_args()
     if program_aguments.url:
       url_to_shorten = program_aguments.url
